@@ -30,10 +30,11 @@ def get_urls(bookmark_folder_name):
         Get all urls to be downloaded (youtube and soundcloud)
     """
     # for macOS :
-    # _path = '/Users/dewouter/Library/Application Support/Google/Chrome/Default/Bookmarks'
+    # path = '/Users/dewouter/Library/Application Support/Google/Chrome/Default/Bookmarks'
     # for debian Linux :
-    _path = '/home/lancelot/.config/google-chrome/Default/Bookmarks'
-    with open(_path, 'r') as bookmarks:
+    # path = '/home/lancelot/.config/google-chrome/Default/Bookmarks'
+    path = 'C:\Users\%username%\AppData\Local\Google\Chrome\User Data\Default\Bookmarks'
+    with open(path, 'r') as bookmarks:
         bookmarks_dictionary = json.load(bookmarks)
     music_folder = next(
         folder for folder in bookmarks_dictionary['roots']['bookmark_bar']['children'] if folder["name"] == bookmark_folder_name
