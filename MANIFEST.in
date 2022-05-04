@@ -1,0 +1,4 @@
+include music_manager\schema.sql
+graft music_manager\static
+graft music_manager\templates
+global-exclude *.pyc
