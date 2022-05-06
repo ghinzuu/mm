@@ -1,0 +1,42 @@
+MMs Features
+
+#################
+# I. DOWNLOADER #
+#################
+
+1. DL Music
+	: From Youtube 		      : From bookmark folder : From like page
+	: From Soundcloud       : From bookmark folder : From like page
+	: From Spotify          : ?
+	: From Deezer           : ?
+	: From Shazam           : ?
+
+2. Edit metadata from files
+  : artist / title / album / year / genre
+  : public api?
+  : own db with trial and error
+
+3. Sync Music on FS
+  a. Local Hard Drive (xWin, xLinux, xMac)
+  b. Remote Hard Drive (encoding)
+  c. phone (android, iOS)
+  d. Cloud (google cloud, ...)
+
+4.
+
+##############
+# II. PLAYER #
+##############
+
+1. Read all codec + GUI
+
+2. Playlists Maker
+  a. Random same genre
+  b. records of previous selections
+3. Records of what is listened (graphs)
+
+#################
+# III. UPLOADER #
+#################
+
+1. Shared files on shared env
