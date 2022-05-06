@@ -31,18 +31,23 @@ def get_default_urls_paths():
     os_name = platform.system()  # get on what OS we are running
     paths = {}
     if 'Windows' in os_name:
-        paths["chrome_bookmarks_path"] = home_directory + r"\AppData\Local\Google\Chrome\User Data\Default\Bookmarks"
-        paths["brave_bookmarks_path"] = home_directory + r"\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Bookmarks"
+        paths["chrome_bookmarks_path"] = home_directory + \
+            r"\AppData\Local\Google\Chrome\User Data\Default\Bookmarks"
+        paths["brave_bookmarks_path"] = home_directory + \
+            r"\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Bookmarks"
         # paths["download_folder"] = r"C:\Users\%username%\Downloads"
         paths["download_folder"] = home_directory + r"\Downloads"
         paths["destination_folder1"] = home_directory + r"\Music"
     # for macOS :
     if 'Darwin' in os_name:
-        paths["chrome_bookmarks_path"] = home_directory + "/Library/Application Support/Google/Chrome/Default/Bookmarks"
+        paths["chrome_bookmarks_path"] = home_directory + \
+            "/Library/Application Support/Google/Chrome/Default/Bookmarks"
         paths["download_folder"] = home_directory + "/Downloads"
         paths["destination_folder1"] = home_directory + "/Music"
     if 'Linux' in os_name:
-        paths["chrome_bookmarks_path"] = home_directory + "/.config/google-chrome/Default/Bookmarks"
+        #paths["chrome_bookmarks_path"] = home_directory + \
+        #    "/.config/google-chrome/Default/Bookmarks"
+        paths["chrome_bookmarks_path"] = "/home/lancelot/.config/google-chrome/Default/Bookmarks"
         paths["download_folder"] = home_directory + "/Downloads"
         paths["destination_folder1"] = home_directory + "/Music"
 
@@ -129,4 +134,9 @@ def tag_mp3(file):
         print(key)
         mp3.key = ""
 
+    mp3.save()
+    print(key)
+    mp3.key = ""
+
+    mp3.save()
     mp3.save()
