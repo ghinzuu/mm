@@ -84,12 +84,12 @@ class DownloadUI(object):
             self.action_label.setText(url)
             self.action_label.adjustSize()
             print(url)
-            # dlm.dl_url_to_mp3(url, destination_paths[0])
+            dlm.dl_url_to_mp3(url, destination_folder)
             self.progressBar.setValue(round((progression/nb_of_urls)*100))
             self.progression_label.setText(str(progression) + "/" + str(nb_of_urls))
             self.progression_label.adjustSize()
             progression = progression + 1
-            time.sleep(0.25)
+            # time.sleep(0.25)
             QApplication.processEvents()
 
     def synchronizeFiles(self, destination_paths):
@@ -106,9 +106,9 @@ class DownloadUI(object):
                     self.action_label.setText(mp3)
                     self.action_label.adjustSize()
                     print(mp3)
-                    # path_source = destination_paths[0] + "/" + filename
-                    # path_destination = destination_paths[index] + "/" + filename
-                    # fsm.copy(path_source, path_destination)
+                    path_source = destination_paths[0] + "/" + mp3
+                    path_destination = destination_paths[index] + "/" + mp3
+                    fsm.copy(path_source, path_destination)
                     self.progressBar.setValue(round((progression/nb_of_mp3)*100))
                     self.progression_label.setText(str(progression) + "/" + str(nb_of_mp3))
                     self.progression_label.adjustSize()
