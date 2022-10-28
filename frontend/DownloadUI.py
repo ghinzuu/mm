@@ -3,7 +3,6 @@
 from PyQt5 import QtCore, QtWidgets, QtGui
 from PyQt5.QtWidgets import QApplication
 import os
-import time
 import backend.file_system_manager as fsm
 import backend.download_manager as dlm
 
@@ -79,6 +78,7 @@ class DownloadUI(object):
         nb_of_urls = len(urls_list)
         self.state_label.setText("Currently downloading in " + destination_folder + "...")
         self.state_label.adjustSize()
+        QApplication.processEvents()
         progression = 1
         for url in urls_list:
             self.action_label.setText(url)
@@ -98,9 +98,10 @@ class DownloadUI(object):
         mp3_list = os.listdir(destination_paths[0])
         nb_of_mp3 = len(mp3_list)
         if nb_of_destination_paths > 1:
-            for index in range(1, (nb_of_destination_paths - 1)):
+            for index in range(1, nb_of_destination_paths):
                 self.state_label.setText("Currently copying from " + destination_paths[0] + " to " + destination_paths[index] + "...")
                 self.state_label.adjustSize()
+                QApplication.processEvents()
                 progression = 1
                 for mp3 in mp3_list:
                     self.action_label.setText(mp3)
@@ -113,3 +114,4 @@ class DownloadUI(object):
                     self.progression_label.setText(str(progression) + "/" + str(nb_of_mp3))
                     self.progression_label.adjustSize()
                     progression = progression + 1
+                    QApplication.processEvents()

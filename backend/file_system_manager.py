@@ -4,6 +4,7 @@ from __future__ import print_function
 # import sys
 import os
 import os.path
+from pathlib import Path
 import platform
 import json
 import shutil
@@ -45,7 +46,7 @@ def get_default_urls_paths():
         paths["download_folder"] = home_directory + "/Downloads"
         paths["destination_folder1"] = home_directory + "/Music"
     if 'Linux' in os_name:
-        #paths["chrome_bookmarks_path"] = home_directory + \
+        # paths["chrome_bookmarks_path"] = home_directory + \
         #    "/.config/google-chrome/Default/Bookmarks"
         paths["chrome_bookmarks_path"] = "/home/lancelot/.config/google-chrome/Default/Bookmarks"
         paths["download_folder"] = home_directory + "/Downloads"
@@ -58,7 +59,7 @@ def get_urls(bookmarks_path, bookmark_folder_name):
     """
         Get all urls to be downloaded (youtube)
     """
-    with open(bookmarks_path, 'r') as bookmarks:
+    with open(bookmarks_path, 'r', errors='ignore') as bookmarks:
         bookmarks_dictionary = json.load(bookmarks)
     music_folder = next(
         folder for folder
@@ -85,7 +86,7 @@ def lists_destination_paths(string_of_destination_paths):
 
 
 def copy(source, destination):
-    shutil.copy2(source, destination)
+    shutil.copy2(Path(source), Path(destination))
 
 
 def syncing_files(path_of_dl_files, list_of_paths_destination):
@@ -133,10 +134,4 @@ def tag_mp3(file):
     for key in tags['ID3TagV1']:
         print(key)
         mp3.key = ""
-
-    mp3.save()
-    print(key)
-    mp3.key = ""
-
-    mp3.save()
     mp3.save()
