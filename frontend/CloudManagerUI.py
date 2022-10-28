@@ -46,16 +46,26 @@ class CloudManagerUI(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(
             self.scrollAreaWidgetContents)
         self.verticalLayout.setObjectName("verticalLayout")
+
         print(platform)
         print(action)
         print(fileSystemFolder)
+
         self.cloudManager = None
         if platform == "Google Drive":
             self.cloudManager = clm.GoogleDriveApi()
+            print("google creds")
+            print(self.cloudManager.credentials)
+        elif platform == "Mega":
+            pass
 
+        self.musicFolder = fileSystemFolder
         # x & y position of the differents labels on the page
         self.x_position = 30
         self.y_position = 30
+        self.action = action
+        self.mp3s_list = []
+
         title = "Download from " + platform + " to " + fileSystemFolder
         if action == "upload":
             title = "Upload from " + fileSystemFolder + " to " + platform
@@ -67,23 +77,25 @@ class CloudManagerUI(object):
         font.setPointSize(22)
         syncTitle_label.setFont(font)
         self.y_position = self.y_position + 20
-
-        # /!\ check FS folder
-        # if fsm.isAValidPath(path):
-
         syncTitleLabelWidth = syncTitle_label.size().width()
         button_x_position = (syncTitleLabelWidth * 3)
-        if action == "download":
-            self.displayMp3ListFromCloud(platform)
-        elif action == "upload":
-            self.displayMp3ListFromFS(fileSystemFolder)
 
-        self.actionButton = QtWidgets.QPushButton(cloudManagerUI)
-        self.actionButton.setGeometry(
-            QtCore.QRect(button_x_position, 70, 105, 75))
-        self.actionButton.setObjectName("actionButton")
-        self.actionButton.setText(action.capitalize())
-        self.actionButton.clicked.connect(lambda: self.cloudUI())
+        if fsm.isAValidPath(fileSystemFolder):
+
+            self.nbOfFiles = 0
+            if action == "download":
+                self.displayMp3ListFromCloud()
+            elif action == "upload":
+                self.nbOfFiles = self.displayMp3ListFromFS(fileSystemFolder)
+
+            self.actionButton = QtWidgets.QPushButton(cloudManagerUI)
+            self.actionButton.setGeometry(
+                QtCore.QRect(button_x_position, 70, 105, 75))
+            self.actionButton.setObjectName("actionButton")
+            self.actionButton.setText(action.capitalize())
+            self.actionButton.clicked.connect(lambda: self.cloudUI())
+        else:
+            syncTitle_label.setText("Invalid path provided for file system folder : no action may performed")
 
         self.cancelButton = QtWidgets.QPushButton(cloudManagerUI)
         self.cancelButton.setGeometry(
@@ -122,34 +134,53 @@ class CloudManagerUI(object):
         labelVarName = 'item_' + str(counter) + '_label'
         self.y_position = self.y_position + 20
         self.createLabel(labelVarName, self.x_position, self.y_position, item)
-        counter = counter + 1
 
-    def displayMp3ListFromFS(self, musicFolder):
+    def displayMp3ListFromFS(self, musicPath):
         """
             Music folders may be messy (as any folders really), but you can
             expect it to contain artist folders that contains album folders
             that contains the song files
         """
         counter = 1
-        for artistFolder in os.listdir(musicFolder):
-            self.displayItem(artistFolder, counter)
+        fileCounter = 0
+        for artistFolder in os.listdir(musicPath):
+            self.displaysItem(artistFolder, counter)
             counter = counter + 1
-            if os.path.isdir(artistFolder):
-                for albumFolder in os.listdir(artistFolder):
-                    self.displayItem('\t' + albumFolder, counter)
+            artistPath = os.path.join(musicPath, artistFolder)
+            if os.path.isfile(artistPath):
+                fileCounter = fileCounter + 1
+            if os.path.isdir(artistPath):
+                for albumFolder in os.listdir(artistPath):
+                    self.displaysItem('\t' + albumFolder, counter)
                     counter = counter + 1
-                    if os.path.isdir(albumFolder):
-                        for mp3 in os.listdir(albumFolder):
-                            self.displayItem('\t\t' + albumFolder, counter)
+                    albumPath = os.path.join(artistPath, albumFolder)
+                    if os.path.isfile(albumPath):
+                        fileCounter = fileCounter + 1
+                    if os.path.isdir(albumPath):
+                        for mp3File in os.listdir(albumPath):
+                            self.displaysItem('\t\t' + mp3File, counter)
                             counter = counter + 1
+                            mp3Path = os.path.join(albumPath, mp3File)
+                            if os.path.isfile(mp3Path):
+                                fileCounter = fileCounter + 1
+        return fileCounter
 
-    def displayMp3ListFromCloud(self, platform):
-        self.cloudManager.list_mp3s()
-        # self.createLabel(labelVarName, self.x_position, self.y_position, mp3)
+    def displayMp3ListFromCloud(self):
+        self.mp3s_list = self.cloudManager.list_mp3s()
+        counter = 1
+        for mp3 in self.mp3s_list:
+            self.displaysItem(mp3['name'], counter)
+            counter = counter + 1
 
     def cloudUI(self):
         self.cloudWidget = QtWidgets.QWidget()
-        downloadUI = CloudUI()
+        cloudUI = CloudUI()
 
-        downloadUI.setupUi(self.cloudWidget, self.urls_list, self.valid_paths)
+        cloudUI.setupUi(self.cloudWidget, self.cloudManager, self.action,
+            self.musicFolder, self.nbOfFiles, self.mp3s_list)
         self.cloudWidget.show()
+
+        if self.action == "download":
+            cloudUI.download(self.mp3s_list, self.musicFolder)
+        elif self.action == "upload":
+            cloudUI.upload(self.musicFolder, self.nbOfFiles)

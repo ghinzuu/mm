@@ -32,6 +32,8 @@ from frontend.CloudManagerUI import CloudManagerUI
     --> Once confirmed, DownloadManagerUI pops the DownloadUI displaying each link being currently downloaded.
 
     TODO:
+        - youtube playlist downloader --yes-playlist
+        - enable video downloads
         - remove the 'testPaths & testCloud buttons'
         - DLM almost done
         - Cloud :
@@ -164,7 +166,7 @@ class MusicManagerUI(object):
         self.right1_labelImg = QtWidgets.QLabel(self.centralwidget)
         self.right1_labelImg.setGeometry(QtCore.QRect(200, 320, 71, 61))
         self.right1_labelImg.setText("")
-        self.right1_labelImg.setPixmap(QtGui.QPixmap("frontend/img/right-arrow.png"))
+        self.right1_labelImg.setPixmap(QtGui.QPixmap("frontend/img/right-arrow.jpg"))
         self.right1_labelImg.setScaledContents(True)
         self.right1_labelImg.setObjectName("right1_labelImg")
 
@@ -185,7 +187,7 @@ class MusicManagerUI(object):
         self.right2_labelImg = QtWidgets.QLabel(self.centralwidget)
         self.right2_labelImg.setGeometry(QtCore.QRect(200, 460, 71, 61))
         self.right2_labelImg.setText("")
-        self.right2_labelImg.setPixmap(QtGui.QPixmap("frontend/img/right-arrow.png"))
+        self.right2_labelImg.setPixmap(QtGui.QPixmap("frontend/img/right-arrow.jpg"))
         self.right2_labelImg.setScaledContents(True)
         self.right2_labelImg.setObjectName("right2_labelImg")
 

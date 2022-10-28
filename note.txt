@@ -16,7 +16,8 @@ ARCHITECTURE: (20-02-22)
 PREREQUISITES:
     - Python3 (obviously)
     - Pip3
-    - you-get (how does it work on windows?)
+    - yt-dlp
+    - you-get
     - FFmpeg ?
     pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 

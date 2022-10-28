@@ -3,7 +3,7 @@
 # import sys
 import os
 import os.path
-import shutil
+
 
 """
     The purpose of this manager is to download the urls it is provided, whether
@@ -19,21 +19,38 @@ import shutil
 
 
 def dl_url_to_mp3(url_to_dl, destination_folder):
-    """
-        you-get -o r'/Users/dewouter/Music' r'https://www.youtube.com/watch?v=YhSQmvMP4vk'
-        you-get -o r'/home/lancelot/Music' r'https://www.youtube.com/watch?v=YhSQmvMP4vk'
-        you-get -o r'D:\Downloads' -i r'https://www.youtube.com/watch?v=YhSQmvMP4vk'
-    """
     if not url_to_dl:
         print("No URL to download")
         pass
     if not destination_folder:
         print("No valid path to download the music to")
         pass
-    command = "you-get -o " + destination_folder + " \"" + url_to_dl + "\""
+    if 'youtube' in url_to_dl:
+        youtube_dl_to_mp3(url_to_dl, destination_folder)
+    else:
+        youget_dl_to_mp3(url_to_dl, destination_folder)
+
+
+def youtube_dl_to_mp3(url_to_dl, destination_folder):
+    only_audio = "--extract-audio --audio-format mp3 "
+    playlist = "--no-playlist "
+    command = "yt-dlp " + only_audio + playlist \
+        + "--path \"" + destination_folder + "\" \"" + url_to_dl + "\""
     os.system(command)
 
 
+# Test for sc
+def youget_dl_to_mp3(url_to_dl, destination_folder):
+    """
+        You-Get is supposed to be working for several platform such as YouTube
+        and SoundCloud. Upon testing recently the dl of YouTube links is very slow :
+        https://github.com/soimort/you-get/pull/2950 thus using yt-dlp instead
+    """
+    command = "you-get -o \"" + destination_folder + "\" \"" + url_to_dl + "\""
+    os.system(command)
+
+
+"""
 def dl_urls_to_mp3(urls_to_dl, destination_folder):
     if len(urls_to_dl) == 0:
         print("No URLS to download")
@@ -44,3 +61,4 @@ def dl_urls_to_mp3(urls_to_dl, destination_folder):
     for url in urls_to_dl:
         command = "you-get -o " + destination_folder + " \"" + url + "\""
         os.system(command)
+"""

@@ -56,16 +56,16 @@ class GoogleDriveApi():
     def list_mp3s(self):
         try:
             results = self.drive_service.files().list(
-                pageSize=10, fields="nextPageToken, files(id, name)").execute()
+                pageSize=4, fields="nextPageToken, files(id, name)").execute()
             mp3s = results.get('files', [])
 
             if not mp3s:
                 print('No files found.')
                 return
-            print('Files:')
+            print('Files: (this is in cloud_manager.py)')
             for mp3 in mp3s:
                 print(u'{0} ({1})'.format(mp3['name'], mp3['id']))
-
+            print("There is %d mp3 in the list" % len(mp3s))
             return mp3s
 
         except HttpError as error:
@@ -73,22 +73,25 @@ class GoogleDriveApi():
             print(f'An error occurred: {error}')
 
     # /!\ Needs to be tested
-    def download_list(self, mp3_list):
-        for mp3 in mp3_list:
-            request = self.drive_service.files().get_media(fileId=mp3['id'])
-            file_holder = io.BytesIO()
-            downloader = MediaIoBaseDownload(file_holder, request)
-            done = False
-            while done is False:
-                status, done = downloader.next_chunk()
-                print("Download %s %d%%." %
-                      mp3['name'], int(status.progress() * 100))
+    def download_mp3(self, mp3, destination_folder):
+        request = self.drive_service.files().get_media(fileId=mp3['id'])
+        file_holder = io.BytesIO()
+        downloader = MediaIoBaseDownload(file_holder, request)
+        done = False
+        mp3_path = mp3['name']
+        mp3_directory = os.path.dirname(mp3_path)
+        while done is False:
+            status, done = downloader.next_chunk()
+            print("Download %s %d%%." % (mp3_path, int(status.progress() * 100)))
 
-            file_holder.seek(0)  # Idk why dis?
+        file_holder.seek(0)  # Idk why dis?
 
-            # Write the received data to the file
-            with open(mp3['name'], 'wb') as fs_mp3:
-                shutil.copyfileobj(file_holder, fs_mp3)
+        # Write the received data to the file
+        # file_path = destination_folder + "/" + mp3['name']
+        if not os.path.exists(mp3_directory):
+            os.makedirs(mp3_directory)
+        with open(mp3_path, 'wb') as fs_mp3:
+            shutil.copyfileobj(file_holder, fs_mp3)
 
     # /!\ Needs to be tested
     def upload_mp3(self, mp3_path):
@@ -107,6 +110,24 @@ class GoogleDriveApi():
         print('File ID: %s' % uploaded_file.get('id'))
 
     """
+    def download_list(self, mp3_list, destination_folder):
+        for mp3 in mp3_list:
+            request = self.drive_service.files().get_media(fileId=mp3['id'])
+            file_holder = io.BytesIO()
+            downloader = MediaIoBaseDownload(file_holder, request)
+            done = False
+            while done is False:
+                status, done = downloader.next_chunk()
+                print("Download %s %d%%." %
+                      mp3['name'], int(status.progress() * 100))
+
+            file_holder.seek(0)  # Idk why dis?
+
+            # Write the received data to the file
+            file_path = destination_folder + "/" + mp3['name']
+            with open(file_path, 'wb') as fs_mp3:
+                shutil.copyfileobj(file_holder, fs_mp3)
+
     def getGoogleDriveCredentials2(scope):
         credentials = None
         # The file token.json stores the user's access and refresh tokens, and is
@@ -210,5 +231,5 @@ class GoogleDriveApi():
         """
 
 
-def mega_connection():
+class MegaApi():
     pass

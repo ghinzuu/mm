@@ -61,6 +61,7 @@ class DownloadManagerUI(object):
                     downloadData.favFolderName
                 )
 
+        # TODO
         if downloadData.isFirefoxFavoriteChecked:
             pass
 
