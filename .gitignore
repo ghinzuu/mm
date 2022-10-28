@@ -3,11 +3,17 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
+backend/google_creds/creds.txt
+backend/google_creds/storage.json
+frontend/generated*.py
+frontend/*.ui
+*copy.py
 build/
 develop-eggs/
 dist/
