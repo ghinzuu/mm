@@ -4,7 +4,7 @@ import os
 from PyQt5 import QtCore, QtWidgets, QtGui
 import backend.file_system_manager as fsm
 import backend.cloud_manager as clm
-from frontend.CloudUI import CloudUI
+from frontend.qt.CloudUI import CloudUI
 
 """
     This manager displays all the URLS to be downloaded,

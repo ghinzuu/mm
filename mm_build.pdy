@@ -1,0 +1,5838 @@
+version = 0
+sysroot = ""
+sysroots_dir = ""
+parts = []
+
+[Application]
+entry_point = ""
+is_console = false
+is_bundle = false
+name = ""
+qmake_configuration = ""
+script = "music_manager.py"
+syspath = ""
+
+[Application.Package]
+name = "."
+exclude = [ "*.pyc", "*.pyd", "*.pyo", "*.pyx", "*.pxi", "__pycache__", "*-info", "EGG_INFO", "*.so",]
+[[Application.Package.Content]]
+name = ".gitignore"
+included = false
+is_directory = false
+
+[[Application.Package.Content]]
+name = ".idea"
+included = false
+is_directory = true
+[[Application.Package.Content.Content]]
+name = ".gitignore"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "inspectionProfiles"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content]]
+name = "profiles_settings.xml"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content]]
+name = "misc.xml"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "mm.iml"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "modules.xml"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "vcs.xml"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "workspace.xml"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content]]
+name = "backend"
+included = true
+is_directory = true
+[[Application.Package.Content.Content]]
+name = "cloud_manager.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "data_manager.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "destinationPaths.txt"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "download_manager.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "file_system_manager.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "google_creds"
+included = true
+is_directory = true
+[[Application.Package.Content.Content.Content]]
+name = "client_secret.json"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "creds.txt"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "storage.json"
+included = true
+is_directory = false
+
+
+[[Application.Package.Content.Content]]
+name = "hello.pdf"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "hello.txt"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "upload_manager.py"
+included = true
+is_directory = false
+
+
+[[Application.Package.Content]]
+name = "FEATURES"
+included = false
+is_directory = false
+
+[[Application.Package.Content]]
+name = "file_manager.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content]]
+name = "frontend"
+included = true
+is_directory = true
+[[Application.Package.Content.Content]]
+name = "CloudConnectUI.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "CloudManagerUI.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "CloudUI.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "DownloadManagerData.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "DownloadManagerUI.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "DownloadUI.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "generated.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "generated_scroll.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "img"
+included = true
+is_directory = true
+[[Application.Package.Content.Content.Content]]
+name = "cloud.png"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "computer.png"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "copy.png"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "down-arrow.jpg"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "down-arrow.png"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "left-arrow.jpg"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "left-arrow.png"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "mmduoraw.jpg"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "mmIcon1.png"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "mmIcon2.png"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "mmsx4.jpg"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "newFile.webp"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "right-arrow.jpg"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "right-arrow.png"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "up-arrow.jpg"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "up-arrow.png"
+included = true
+is_directory = false
+
+
+[[Application.Package.Content.Content]]
+name = "music_manager.ui"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "MusicManagerUI.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "paths_testing.ui"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "PathsTestingUI.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "placeholder.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "UI.html"
+included = true
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "untitled.ui"
+included = true
+is_directory = false
+
+
+[[Application.Package.Content]]
+name = "MANIFEST.in"
+included = false
+is_directory = false
+
+[[Application.Package.Content]]
+name = "music_manager.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content]]
+name = "music_manager_online"
+included = false
+is_directory = true
+[[Application.Package.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "auth.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "blog.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "db.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "schema.sql"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "static"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content]]
+name = "style.css"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content]]
+name = "templates"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content]]
+name = "auth"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content]]
+name = "register.html"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content]]
+name = "base.html"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "blog"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content]]
+name = "create.html"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "index.html"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "update.html"
+included = false
+is_directory = false
+
+
+
+
+[[Application.Package.Content]]
+name = "note.txt"
+included = false
+is_directory = false
+
+[[Application.Package.Content]]
+name = "README.md"
+included = false
+is_directory = false
+
+[[Application.Package.Content]]
+name = "setup.py"
+included = true
+is_directory = false
+
+[[Application.Package.Content]]
+name = "tests"
+included = false
+is_directory = true
+Content = []
+
+[[Application.Package.Content]]
+name = "venv"
+included = false
+is_directory = true
+[[Application.Package.Content.Content]]
+name = ".gitignore"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "Lib"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content]]
+name = "site-packages"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content]]
+name = "blinker"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "base.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "py.typed"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_utilities.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "click"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "core.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "decorators.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "exceptions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "formatting.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "globals.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "parser.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "py.typed"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "shell_completion.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "termui.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_termui_impl.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "testing.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_textwrap.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "types.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_winconsole.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "colorama"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "ansi.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "ansitowin32.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "initialise.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "tests"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "ansi_test.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "ansitowin32_test.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "initialise_test.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "isatty_test.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "winterm_test.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "win32.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "winterm.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "distutils-precedence.pth"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "_distutils_hack"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "override.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "easy-install.pth"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "flask"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__main__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "app.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "blueprints.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "cli.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "config.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "ctx.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "debughelpers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "globals.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "helpers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "json"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "provider.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "tag.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "logging.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "py.typed"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "sansio"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "app.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "blueprints.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "README.md"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "scaffold.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "sessions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "signals.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "templating.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "testing.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "typing.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "views.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "wrappers.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "importlib_metadata"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_adapters.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_collections.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "compat"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "py39.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "diagnose.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_functools.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_itertools.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_meta.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "py.typed"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_text.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "itsdangerous"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "encoding.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "exc.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_json.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "py.typed"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "serializer.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "signer.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "timed.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "url_safe.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "jinja2"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "async_utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "bccache.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "compiler.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "constants.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "debug.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "defaults.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "environment.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "exceptions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "ext.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "filters.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_identifier.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "idtracking.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "lexer.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "loaders.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "meta.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "nativetypes.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "nodes.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "optimizer.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "parser.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "py.typed"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "runtime.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "sandbox.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "tests.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "visitor.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "markupsafe"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_native.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "py.typed"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_speedups.c"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_speedups.pyi"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "music-manager.egg-link"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "pip"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__main__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__pip-runner__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_internal"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "build_env.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "cache.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "cli"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "autocompletion.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "base_command.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "cmdoptions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "command_context.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "main.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "main_parser.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "parser.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "progress_bars.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "req_command.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "spinners.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "status_codes.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "commands"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "cache.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "check.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "completion.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "configuration.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "debug.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "download.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "freeze.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "hash.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "help.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "index.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "inspect.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "install.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "list.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "search.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "show.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "uninstall.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "wheel.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "configuration.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "distributions"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "base.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "installed.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "sdist.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "wheel.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "exceptions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "index"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "collector.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "package_finder.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "sources.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "locations"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "base.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_distutils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_sysconfig.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "main.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "metadata"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "base.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "importlib"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "_compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "_dists.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "_envs.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_json.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "pkg_resources.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "models"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "candidate.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "direct_url.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "format_control.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "index.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "installation_report.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "link.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "scheme.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "search_scope.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "selection_prefs.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "target_python.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "wheel.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "network"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "auth.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "cache.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "download.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "lazy_wheel.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "session.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "xmlrpc.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "operations"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "build"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "build_tracker.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "metadata.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "metadata_editable.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "metadata_legacy.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "wheel.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "wheel_editable.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "wheel_legacy.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "check.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "freeze.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "install"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "editable_legacy.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "wheel.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "prepare.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "pyproject.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "req"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "constructors.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "req_file.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "req_install.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "req_set.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "req_uninstall.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "resolution"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "base.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "legacy"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "resolver.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "resolvelib"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "base.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "candidates.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "factory.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "found_candidates.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "provider.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "reporter.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "requirements.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "resolver.py"
+included = false
+is_directory = false
+
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "self_outdated_check.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "utils"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "appdirs.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "compatibility_tags.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "datetime.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "deprecation.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "direct_url_helpers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "egg_link.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "encoding.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "entrypoints.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "filesystem.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "filetypes.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "glibc.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "hashes.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "inject_securetransport.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_jaraco_text.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_log.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "logging.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "misc.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "models.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "packaging.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "setuptools_build.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "subprocess.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "temp_dir.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "unpacking.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "urls.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "virtualenv.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "wheel.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "vcs"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "bazaar.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "git.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "mercurial.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "subversion.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "versioncontrol.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "wheel_builder.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "py.typed"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_vendor"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "cachecontrol"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "adapter.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "cache.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "caches"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "file_cache.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "redis_cache.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_cmd.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "controller.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "filewrapper.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "heuristics.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "serialize.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "wrapper.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "certifi"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__main__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "cacert.pem"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "core.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "chardet"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "big5freq.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "big5prober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "chardistribution.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "charsetgroupprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "charsetprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "cli"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "chardetect.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "codingstatemachine.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "codingstatemachinedict.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "cp949prober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "enums.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "escprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "escsm.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "eucjpprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "euckrfreq.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "euckrprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "euctwfreq.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "euctwprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "gb2312freq.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "gb2312prober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "hebrewprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "jisfreq.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "johabfreq.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "johabprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "jpcntx.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "langbulgarianmodel.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "langgreekmodel.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "langhebrewmodel.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "langhungarianmodel.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "langrussianmodel.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "langthaimodel.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "langturkishmodel.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "latin1prober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "macromanprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "mbcharsetprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "mbcsgroupprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "mbcssm.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "metadata"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "languages.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "resultdict.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "sbcharsetprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "sbcsgroupprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "sjisprober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "universaldetector.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "utf1632prober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "utf8prober.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "version.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "colorama"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "ansi.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "ansitowin32.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "initialise.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "tests"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "ansi_test.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "ansitowin32_test.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "initialise_test.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "isatty_test.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "winterm_test.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "win32.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "winterm.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "distlib"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "database.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "index.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "locators.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "manifest.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "markers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "metadata.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "resources.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "scripts.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "t32.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "t64-arm.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "t64.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "util.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "version.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "w32.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "w64-arm.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "w64.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "wheel.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "distro"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__main__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "distro.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "idna"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "codec.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "core.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "idnadata.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "intranges.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "package_data.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "uts46data.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "msgpack"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "exceptions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "ext.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "fallback.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "packaging"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__about__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_manylinux.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "markers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_musllinux.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "requirements.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "specifiers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_structures.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "tags.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "version.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "pkg_resources"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "platformdirs"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__main__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "android.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "api.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "macos.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "unix.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "version.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "windows.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "pygments"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__main__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "cmdline.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "console.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "filter.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "filters"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "formatter.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "formatters"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "bbcode.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "groff.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "html.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "img.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "irc.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "latex.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "_mapping.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "other.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "pangomarkup.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "rtf.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "svg.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "terminal.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "terminal256.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "lexer.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "lexers"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "_mapping.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "python.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "modeline.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "plugin.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "regexopt.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "scanner.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "sphinxext.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "style.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "styles"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "token.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "unistring.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "util.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "pyparsing"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "actions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "common.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "core.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "diagram"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "exceptions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "helpers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "results.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "testing.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "unicode.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "util.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "pyproject_hooks"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_impl.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_in_process"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "_in_process.py"
+included = false
+is_directory = false
+
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "requests"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__version__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "adapters.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "api.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "auth.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "certs.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "cookies.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "exceptions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "help.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "hooks.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_internal_utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "models.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "packages.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "sessions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "status_codes.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "structures.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "utils.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "resolvelib"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "compat"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "collections_abc.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "providers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "reporters.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "resolvers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "structs.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "rich"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__main__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "abc.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "align.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "ansi.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "bar.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "box.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_cell_widths.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "cells.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "color.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "color_triplet.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "columns.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "console.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "constrain.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "containers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "control.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "default_styles.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "diagnose.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "emoji.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_emoji_codes.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_emoji_replace.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "errors.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_export_format.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_extension.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "file_proxy.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_fileno.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "filesize.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "highlighter.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_inspect.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "json.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "jupyter.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "layout.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "live.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "live_render.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_log_render.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "logging.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_loop.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "markup.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "measure.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_null_file.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "padding.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "pager.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "palette.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_palettes.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "panel.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_pick.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "pretty.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "progress.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "progress_bar.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "prompt.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "protocol.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_ratio.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "region.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "repr.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "rule.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "scope.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "screen.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "segment.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "spinner.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_spinners.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_stack.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "status.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "style.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "styled.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "syntax.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "table.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "terminal_theme.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "text.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "theme.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "themes.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_timer.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "traceback.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "tree.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_win32_console.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_windows.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_windows_renderer.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_wrap.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "six.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "tenacity"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "after.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_asyncio.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "before.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "before_sleep.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "nap.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "retry.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "stop.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "tornadoweb.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "wait.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "tomli"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_parser.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_re.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_types.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "typing_extensions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "urllib3"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_collections.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "connection.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "connectionpool.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "contrib"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "appengine.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "_appengine_environ.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "ntlmpool.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "pyopenssl.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "_securetransport"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "bindings.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "low_level.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "securetransport.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "socks.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "exceptions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "fields.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "filepost.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "packages"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "backports"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "makefile.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "weakref_finalize.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "six.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "poolmanager.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "request.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "response.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "util"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "connection.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "proxy.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "queue.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "request.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "response.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "retry.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "ssl_.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "ssl_match_hostname.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "ssltransport.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "timeout.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "url.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "wait.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_version.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "vendor.txt"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "webencodings"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "labels.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "mklabels.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "tests.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "x_user_defined.py"
+included = false
+is_directory = false
+
+
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "pip-23.2.1.virtualenv"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "pkg_resources"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "extern"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_vendor"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "importlib_resources"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "abc.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_adapters.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_common.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_itertools.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_legacy.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "readers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "simple.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "jaraco"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "context.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "functools.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "text"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "more_itertools"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "more.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "recipes.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "packaging"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_elffile.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_manylinux.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "markers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "metadata.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_musllinux.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_parser.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "requirements.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "specifiers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_structures.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "tags.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_tokenizer.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "version.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "platformdirs"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__main__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "android.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "api.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "macos.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "unix.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "version.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "windows.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "typing_extensions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "zipp.py"
+included = false
+is_directory = false
+
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "setuptools"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "archive_util.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "build_meta.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "cli-32.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "cli-64.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "cli-arm64.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "cli.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "command"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "alias.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "bdist_egg.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "bdist_rpm.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "build.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "build_clib.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "build_ext.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "build_py.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "develop.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "dist_info.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "easy_install.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "editable_wheel.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "egg_info.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "install.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "install_egg_info.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "install_lib.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "install_scripts.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "launcher manifest.xml"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "register.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "_requirestxt.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "rotate.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "saveopts.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "sdist.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "setopt.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "test.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "upload.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "upload_docs.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "config"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "_apply_pyprojecttoml.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "expand.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "pyprojecttoml.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "setupcfg.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "_validate_pyproject"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "error_reporting.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "extra_validations.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "fastjsonschema_exceptions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "fastjsonschema_validations.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "formats.py"
+included = false
+is_directory = false
+
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_core_metadata.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "dep_util.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "depends.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "discovery.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "dist.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_distutils"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "archive_util.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "bcppcompiler.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "ccompiler.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "cmd.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "_collections.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "command"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "bdist.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "bdist_dumb.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "bdist_rpm.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "build.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "build_clib.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "build_ext.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "build_py.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "build_scripts.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "check.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "clean.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "config.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_framework_compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "install.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "install_data.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "install_egg_info.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "install_headers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "install_lib.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "install_scripts.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "py37compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "register.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "sdist.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "upload.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "config.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "core.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "cygwinccompiler.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "debug.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "dep_util.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "dir_util.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "dist.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "errors.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "extension.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "fancy_getopt.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "file_util.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "filelist.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "_functools.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "_log.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "log.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "_macos_compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "msvc9compiler.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "_msvccompiler.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "msvccompiler.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "py38compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "py39compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "spawn.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "sysconfig.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "text_file.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "unixccompiler.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "util.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "version.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "versionpredicate.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_entry_points.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "errors.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "extension.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "extern"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "glob.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "gui-32.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "gui-64.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "gui-arm64.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "gui.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_imp.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_importlib.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "installer.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_itertools.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "launch.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "logging.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "monkey.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "msvc.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "namespaces.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_normalization.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "package_index.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_path.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "py312compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_reqs.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "sandbox.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "script (dev).tmpl"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "script.tmpl"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "unicode_utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_vendor"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "importlib_metadata"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_adapters.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_collections.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_functools.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_itertools.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_meta.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_py39compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_text.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "importlib_resources"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "abc.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_adapters.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_common.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_compat.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_itertools.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_legacy.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "readers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "simple.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "jaraco"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "context.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "functools.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "text"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "more_itertools"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "more.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "recipes.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "ordered_set.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "packaging"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_elffile.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_manylinux.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "markers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "metadata.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_musllinux.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_parser.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "requirements.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "specifiers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_structures.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "tags.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_tokenizer.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "version.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "tomli"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_parser.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_re.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_types.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "typing_extensions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "zipp.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "version.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "warnings.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "wheel.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "windows_support.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "setuptools-68.2.0.virtualenv"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "_virtualenv.pth"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "_virtualenv.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "werkzeug"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "datastructures"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "accept.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "accept.pyi"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "auth.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "cache_control.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "cache_control.pyi"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "csp.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "csp.pyi"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "etag.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "etag.pyi"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "file_storage.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "file_storage.pyi"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "headers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "headers.pyi"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "mixins.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "mixins.pyi"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "range.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "range.pyi"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "structures.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "structures.pyi"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "debug"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "console.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "repr.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "shared"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "console.png"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "debugger.js"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "ICON_LICENSE.md"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "less.png"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "more.png"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "style.css"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "tbtools.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "exceptions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "formparser.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "http.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_internal.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "local.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "middleware"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "dispatcher.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "http_proxy.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "lint.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "profiler.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "proxy_fix.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "shared_data.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "py.typed"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_reloader.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "routing"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "converters.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "exceptions.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "map.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "matcher.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "rules.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "sansio"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "http.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "multipart.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "request.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "response.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "utils.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "security.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "serving.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "test.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "testapp.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "urls.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "user_agent.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "wrappers"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "request.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "response.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "wsgi.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "wheel"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__main__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "bdist_wheel.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "cli"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "convert.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "pack.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "tags.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "unpack.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "macosx_libfile.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "metadata.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "_setuptools_logging.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "util.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "vendored"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "packaging"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_elffile.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_manylinux.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "markers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_musllinux.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_parser.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "requirements.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "specifiers.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_structures.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "tags.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "_tokenizer.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "utils.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content.Content]]
+name = "version.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "vendor.txt"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "wheelfile.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "wheel-0.41.2.virtualenv"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content]]
+name = "zipp"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "compat"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "__init__.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content.Content.Content.Content]]
+name = "py310.py"
+included = false
+is_directory = false
+
+
+[[Application.Package.Content.Content.Content.Content.Content]]
+name = "glob.py"
+included = false
+is_directory = false
+
+
+
+
+[[Application.Package.Content.Content]]
+name = "pyvenv.cfg"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content]]
+name = "Scripts"
+included = false
+is_directory = true
+[[Application.Package.Content.Content.Content]]
+name = "activate"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "activate.bat"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "activate.fish"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "activate.nu"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "activate.ps1"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "activate_this.py"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "deactivate.bat"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "flask.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "pip-3.9.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "pip.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "pip3.9.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "pip3.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "pydoc.bat"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "python.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "pythonw.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "wheel-3.9.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "wheel.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "wheel3.9.exe"
+included = false
+is_directory = false
+
+[[Application.Package.Content.Content.Content]]
+name = "wheel3.exe"
+included = false
+is_directory = false
+
+
+

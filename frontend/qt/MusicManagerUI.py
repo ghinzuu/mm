@@ -6,11 +6,11 @@ from functools import partial
 
 import backend.file_system_manager as fsm
 
-from frontend.PathsTestingUI import PathsTestingUI
-from frontend.CloudConnectUI import CloudConnectUI
-from frontend.DownloadManagerData import DownloadManagerData
-from frontend.DownloadManagerUI import DownloadManagerUI
-from frontend.CloudManagerUI import CloudManagerUI
+from frontend.qt.PathsTestingUI import PathsTestingUI
+from frontend.qt.CloudConnectUI import CloudConnectUI
+from frontend.qt.DownloadManagerData import DownloadManagerData
+from frontend.qt.DownloadManagerUI import DownloadManagerUI
+from frontend.qt.CloudManagerUI import CloudManagerUI
 
 
 """

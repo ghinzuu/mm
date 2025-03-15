@@ -1,5 +1,5 @@
 
- MUSIC MANAGER <>
+MUSIC MANAGER <>
 
 Get designer code:
 (in mm\frontend)
@@ -25,7 +25,7 @@ ROADMAP:
     Get all url for youtube / soundcloud / spotify
     Dl into repos
     Clean files (check for metadata)
-    Make playlists?
+    Make playlists?fdg
 
 TODO:
     - Make an install file
