@@ -2,7 +2,7 @@
 
 from PyQt5 import QtCore, QtWidgets, QtGui
 import backend.file_system_manager as fsm
-from frontend.DownloadUI import DownloadUI
+from frontend.qt.DownloadUI import DownloadUI
 
 """
     This manager displays all the URLS to be downloaded,

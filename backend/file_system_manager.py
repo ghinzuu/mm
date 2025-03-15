@@ -23,6 +23,26 @@ from mp3_tagger import MP3File, VERSION_BOTH  # , VERSION_1, VERSION_2
         - Write to destinations (if not already owned)
 """
 
+CONFIG_FILE = "config.json"
+
+
+def load_config(parameter):
+    if not os.path.exists(CONFIG_FILE):
+        save_config("", "")  # Create file if it doesn't exist
+
+    with open(CONFIG_FILE, "r") as file:
+        try:
+            config = json.load(file)
+            return config.get(parameter, "")
+        except json.JSONDecodeError:
+            return ""
+
+
+def save_config(parameter, value):
+    config = {parameter: value}
+    with open(CONFIG_FILE, "w") as file:
+        json.dump(config, file, indent=4)
+
 
 def get_default_urls_paths():
     """

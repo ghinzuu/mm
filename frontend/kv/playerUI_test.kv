@@ -1,0 +1,123 @@
+<Screen>
+    BoxLayout:
+        orientation: 'vertical'
+
+        # Title Row
+        Label:
+            id: title_label
+            text: "Status - Filename.mp3"
+            font_size: 24
+            size_hint_y: None
+            height: 50
+            bold: True
+            halign: 'center'
+            valign: 'middle'
+            text_size: self.size
+
+        # Metadata Box
+        GridLayout:
+            cols: 3
+            size_hint_y: None
+            height: 150
+
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Title: "
+                TextInput:
+                    id: title_input
+                    multiline: False
+                Label:
+                    text: "Performer: "
+                TextInput:
+                    id: performer_input
+                    multiline: False
+
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Album: "
+                TextInput:
+                    id: album_input
+                    multiline: False
+                Label:
+                    text: "Year: "
+                TextInput:
+                    id: year_input
+                    multiline: False
+
+            Image:
+                id: cover_image
+                source: "default_cover.png"
+                size_hint: None, None
+                size: 100, 100
+
+        # Slider Row
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: 50
+
+            Slider:
+                id: progress_slider
+                min: 0
+                max: 100
+                value: 0
+                size_hint_x: 0.85
+            Label:
+                id: time_label
+                text: "00:00 / 00:00"
+                size_hint_x: 0.15
+
+        # Action Bar Row
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: 50
+            spacing: 10
+
+            Button:
+                text: "Previous"
+            Button:
+                id: play_pause_button
+                text: "Play"
+            Button:
+                text: "Next"
+            Button:
+                text: "Loop"
+            Button:
+                text: "Repeat"
+            Button:
+                text: "Playlist"
+            Button:
+                text: "Settings"
+
+        # Main Content
+        BoxLayout:
+            orientation: 'horizontal'
+
+            # Music List Column
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_x: 0.66
+                Label:
+                    text: "Music List"
+                    font_size: 18
+                    size_hint_y: None
+                    height: 30
+                ScrollView:
+                    BoxLayout:
+                        id: music_list
+                        orientation: 'vertical'
+                        size_hint_y: None
+                        height: self.minimum_height
+
+            # Next Song Column
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_x: 0.34
+                Label:
+                    text: "Next Song"
+                    font_size: 18
+                    size_hint_y: None
+                    height: 30
