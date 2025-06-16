@@ -1,70 +1,83 @@
++-----------------------+
+|     MUSIC MANAGER     |
+|    Author : ghinzu    |
++-----------------------+
 
-MUSIC MANAGER <>
+Music manager (mm) is a python app developed to manage your music across all your different devices.
+It was developed with the idea of being as portable as possible in order to be able to run on most OS.
+That being said, it has just been tested on windows and android :/
 
-Get designer code:
-(in mm\frontend)
-pyuic5 -x untitled.ui -o generated.py
+The purposes of mm are the followings :
+- An intuitive ad-free easy to use music player, build to easily set playlists
+- A youtube/soundcloud downloader, allowing mass downloads from browser recorded favourite links
+- A sync feature allowing you to transfer music from your computer to your phone via your google drive
 
-ARCHITECTURE: (20-02-22)
 
+
+ARCHITECTURE: (20-02-22) LEGACY
+------------
     - music_manager.py : code for the server, handling the api requests
     - download_manager.py : handles downloads ie link downloads and favorite folder in browsers
     - file_system_manager.py : handles replication of mp3s over both remote and local hard drives / edit metada files
     - data_manager.py : set editor / playlists generator / app users / music stats
     - upload_manager.py : uploads music from shared server
 
-PREREQUISITES:
+
+ARCHITECTURE: (12-04-25)
+------------
+
+
+ROADMAP:
+-------
+    - music player
+    - downloader youtube / soundcloud (/ spotify) from browser or search or link
+    - Sync cloud (google drive)
+    - playlists maker
+    - blind tester
+
+TODO:
+    - Make an install/compile file/procedure for windows (mac/linux?) and android (ios?)
+    - Print usage
+    - Make paths (bookmarks + dl destination folder) so it works for any users on any OS
+    - Make it compatible for all browsers (brave, chrome, firefox, safari, edge, opera)
+    - test you-get with YT list and with soundcloud
+    - Soundcloud DL
+    - Music player - create DB usage for playlist maker and favourite
+    - (Online app : forum to share playlists)
+    - Blind test
+    - player UI + mobile
+    - sync UI + mobile
+    - DL UI + mobile
+    - Next song
+    - Playlist maker
+    - Next song
+    - Previous next
+    - greater list on browse
+    - time bug
+    - smoother song playback on slider
+    - DL cover
+    - smoother metadata edit
+    - test all features with all types of files : ".mp3", ".wav", ".flac", ".ogg", ".m4a"
+    - browse whole device to find songs
+
+RUN Flask: (music manager online currently outside of scope)
+$env:FLASK_APP = "music_manager"
+$env:FLASK_ENV = "development"
+flask run
+
+Create SQLite DB:
+----------------
+...
+
+Get designer code: (LEGACY from pyQT5)
+(in mm\frontend)
+pyuic5 -x untitled.ui -o generated.py
+
+
+PREREQUISITES: LEGACY (check requirements.txt)
     - Python3 (obviously)
     - Pip3
     - yt-dlp
     - you-get
     - FFmpeg ?
     pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-
-ROADMAP:
-    Get all url for youtube / soundcloud / spotify
-    Dl into repos
-    Clean files (check for metadata)
-    Make playlists?fdg
-
-TODO:
-    - Make an install file
-    - Print usage
-    - Make paths (bookmarks + dl destination folder) so it works for any users on any OS
-    - Make it compatible for all browsers (chrome, firefox, safari, edge, opera)
-    - test you-get with YT list and with soundcloud
-    - Music player - create DB usage for playlist maker and favourite
-    - Online app : forum to share playlists
-    - Blind test
-    - UI todo
-    - Mobile UI
-
-
-RUN Flask:
-$env:FLASK_APP = "music_manager"
-$env:FLASK_ENV = "development"
-flask run
-
-Create SQLite DB:
-...
-
-Link function to GUI button:
-  buttonObject.clicked.connect(function_name)
-
-
-Old main code :
-paths = fsm.get_default_urls_paths()
-  paths["download_folder"] = r"D:\Downloads"
-  # string_of_destination_paths = paths["destination_folder1"]
-  # string_of_destination_paths = r"D:\Music\phone music?F:\MEDIA\phone music"
-  string_of_destination_paths = r"D:\Music\phone music"
-  list_of_destination_paths = fsm.lists_destination_paths(string_of_destination_paths)
-  # for key, value in paths:
-  #     print(key + " " + value)
-  # print(paths)
-  bookmark_folder_name = "DL"
-  music_to_dl_urls = fsm.get_urls(paths["bookmarks_path"], bookmark_folder_name)
-  # print(music_to_dl_urls)
-  dlm.dl_urls_to_mp3(music_to_dl_urls, paths["download_folder"])
-  fsm.syncing_files(paths["download_folder"], list_of_destination_paths)
-  # tag_mp3(r"D:\Music\phone music\01 The Lighthouse.mp3")
