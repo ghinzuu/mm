@@ -1,5 +1,5 @@
+import gc
 import pygame
-from mutagen.mp3 import MP3
 
 
 class AudioPlayer:
@@ -19,7 +19,7 @@ class AudioPlayer:
 
     def play(self):
         """Plays a new song or resumes a paused song."""
-        #print(f"play-status? {self.is_playing}")
+        print(f"play-status? {self.is_playing}")
         #print(f"play-current_time? {self.get_current_time()}")
         if self.current_song and not self.is_playing:  # play song
             pygame.mixer.music.play(start=float(self.get_current_time()))
@@ -35,7 +35,7 @@ class AudioPlayer:
     def stop(self):
         pygame.mixer.music.stop()
         self.current_song = None
-        self.is_playing = True
+        self.is_playing = False
 
     def seek(self, seconds):
         """Seeks to a specific time in the song."""
@@ -51,16 +51,6 @@ class AudioPlayer:
             except TypeError:
                 print("Error: seek() received incorrect input type.")
 
-    def get_duration(self, file_path):
-        audio = MP3(file_path)
-        return audio.info.length  # Duration in seconds
-
-    def format_time(self, seconds):
-        """Format seconds into a MM:SS format."""
-        minutes = int(seconds // 60)
-        seconds = int(seconds % 60)
-        return f"{minutes:02}:{seconds:02}"
-
     def get_current_time(self):
         """
         Returns the current time of the audio in seconds.
@@ -73,4 +63,14 @@ class AudioPlayer:
         if not pygame.mixer.music.get_busy():
             return self.marked_time  # If not playing, return last marked time
         return self.marked_time + (pygame.mixer.music.get_pos() / 1000)  # Add elapsed time to the marked time
+
+    def unload(self):
+        """Ensure the file is completely released."""
+        if self.current_song:
+            self.stop()
+            self.current_song = None
+            self.marked_time = None
+            pygame.mixer.quit()  # This is what actually unloads the file
+
+
 

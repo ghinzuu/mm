@@ -1,123 +1,252 @@
-<Screen>
-    BoxLayout:
-        orientation: 'vertical'
+<PlayerUI>:
+    orientation: "vertical"
+    padding: 10
+    spacing: 10
 
-        # Title Row
-        Label:
-            id: title_label
-            text: "Status - Filename.mp3"
-            font_size: 24
-            size_hint_y: None
-            height: 50
-            bold: True
-            halign: 'center'
-            valign: 'middle'
-            text_size: self.size
+    # 1. Title Status Bar
+    Label:
+        id: title_status
+        text: "Select a song"
+        font_size: 20
+        size_hint_y: None
+        height: 40
 
-        # Metadata Box
-        GridLayout:
-            cols: 3
-            size_hint_y: None
-            height: 150
+    # 2️. Metadata Grid
+    GridLayout:
+        cols: 3
+        spacing: 5
+        size_hint_y: None
+        height: 120
 
-            GridLayout:
-                cols: 2
+        # Column 1 - First set of labels & text inputs
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_x: 1/3
+            spacing: 5
+
+            BoxLayout:
                 Label:
-                    text: "Title: "
+                    text: "Title:"
+                    size_hint_x: 0.3
                 TextInput:
                     id: title_input
-                    multiline: False
-                Label:
-                    text: "Performer: "
-                TextInput:
-                    id: performer_input
-                    multiline: False
+                    size_hint_x: 0.7
 
-            GridLayout:
-                cols: 2
+            BoxLayout:
                 Label:
-                    text: "Album: "
+                    text: "Artist:"
+                    size_hint_x: 0.3
+                TextInput:
+                    id: artist_input
+                    size_hint_x: 0.7
+
+            BoxLayout:
+                Label:
+                    text: "Album:"
+                    size_hint_x: 0.3
                 TextInput:
                     id: album_input
-                    multiline: False
+                    size_hint_x: 0.7
+
+        # Column 2 - Second set of labels & text inputs
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_x: 1/3
+            spacing: 5
+
+            BoxLayout:
                 Label:
-                    text: "Year: "
+                    text: "Genre:"
+                    size_hint_x: 0.3
                 TextInput:
-                    id: year_input
-                    multiline: False
+                    id: genre_input
+                    size_hint_x: 0.7
 
-            Image:
-                id: cover_image
-                source: "default_cover.png"
-                size_hint: None, None
-                size: 100, 100
+            BoxLayout:
+                Label:
+                    text: "Date:"
+                    size_hint_x: 0.3
+                TextInput:
+                    id: date_input
+                    size_hint_x: 0.7
 
-        # Slider Row
+            Button:
+                id: edit_metadata
+                text: "Edit Metadata"
+                on_release: root.metadata_edit()
+
+        # Column 3 - Full-height image
+        Image:
+            id: cover
+            source: "frontend/img/music.png"
+            size_hint_x: 1/3
+            size_hint_y: 1
+            size: 100, 120
+
+    # 3. Slider Row
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        spacing: 10
+
+        Slider:
+            id: progress_slider
+            min: 0
+            max: 100
+            on_touch_up: root.seek_in_song(self, args[1])
+
+        Label:
+            id: current_time_label
+            text: "00:00"
+            size_hint_x: None
+            width: 50
+
+        Label:
+            id: total_time_label
+            text: "/ 00:00"
+            size_hint_x: None
+            width: 50
+
+
+    # 4. Action Bar
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        spacing: 5
+
+        Button:
+            text: "Previous"
+            on_release: root.previous_song()
+
+        Button:
+            text: "Play/Pause"
+            on_release: root.play()
+
+        Button:
+            text: "Next"
+            on_release: root.next_song()
+
+        Button:
+            text: "Loop"
+            on_release: root.toggle_loop()
+
+        Button:
+            text: "Repeat"
+            on_release: root.toggle_repeat()
+
+        Button:
+            text: "Playlist"
+            on_release: root.open_playlist()
+
         BoxLayout:
-            orientation: 'horizontal'
-            size_hint_y: None
-            height: 50
+            orientation: "vertical"
 
-            Slider:
-                id: progress_slider
-                min: 0
-                max: 100
-                value: 0
-                size_hint_x: 0.85
-            Label:
-                id: time_label
-                text: "00:00 / 00:00"
-                size_hint_x: 0.15
-
-        # Action Bar Row
-        BoxLayout:
-            orientation: 'horizontal'
-            size_hint_y: None
-            height: 50
-            spacing: 10
-
-            Button:
-                text: "Previous"
-            Button:
-                id: play_pause_button
-                text: "Play"
-            Button:
-                text: "Next"
-            Button:
-                text: "Loop"
-            Button:
-                text: "Repeat"
-            Button:
-                text: "Playlist"
+            # Settings button
             Button:
                 text: "Settings"
+                on_release: root.dropdown_settings.open(self)  # Opens dropdown
 
-        # Main Content
+        # Define the dropdown menu (hidden by default)
+        DropDown:
+            id: dropdown_settings
+            on_select: root.on_dropdown_settings_select(args[1])  # Calls the function when an option is selected
+
+            Button:
+                text: "Browse"
+                size_hint_y: None
+                height: 40
+                on_release: dropdown_settings.select(self.text)
+
+            Button:
+                text: "Cloud"
+                size_hint_y: None
+                height: 40
+                on_release: dropdown_settings.select(self.text)
+
+            Button:
+                text: "Upload"
+                size_hint_y: None
+                height: 40
+                on_release: dropdown_settings.select(self.text)
+
+            Button:
+                text: "Search"
+                size_hint_y: None
+                height: 40
+                on_release: dropdown_settings.select(self.text)
+
+    # 5. Music List + Next Song
+    BoxLayout:
+        orientation: "horizontal"
+
+        RecycleView:
+            id: music_list
+            viewclass: "MusicItem"  # Links to the custom RecycleView entry
+            size_hint_x: 0.66
+            size_hint_y: 0.8
+
+            RecycleBoxLayout:
+                default_size: None, dp(40)
+                default_size_hint: 1, None
+                size_hint_y: None
+                height: self.minimum_height
+                orientation: "vertical"
+
         BoxLayout:
-            orientation: 'horizontal'
+            id: next_song_box
+            orientation: "vertical"
+            size_hint_x: 0.33
 
-            # Music List Column
-            BoxLayout:
-                orientation: 'vertical'
-                size_hint_x: 0.66
-                Label:
-                    text: "Music List"
-                    font_size: 18
-                    size_hint_y: None
-                    height: 30
-                ScrollView:
-                    BoxLayout:
-                        id: music_list
-                        orientation: 'vertical'
-                        size_hint_y: None
-                        height: self.minimum_height
+            NextSongLabel:
+                id: next_song_label
 
-            # Next Song Column
-            BoxLayout:
-                orientation: 'vertical'
-                size_hint_x: 0.34
-                Label:
-                    text: "Next Song"
-                    font_size: 18
-                    size_hint_y: None
-                    height: 30
+            NextSongFilePath:
+                id: next_song_filepath
+
+            NextSongTitle:
+                id: next_song_title
+
+            NextSongArtist:
+                id: next_song_artist
+
+            NextSongCover:
+                id: next_song_cover
+
+<MusicItem@Button>:
+    size_hint_y: None
+    height: 40
+
+<NextSongLabel@Label+ButtonBehavior>:
+    on_release: root.select_song(root.next_song)
+    text: "Next Song"
+    font_size: 18
+    size_hint_y: None
+    height: 40
+
+<NextSongFilePath@Label+ButtonBehavior>:
+    on_release: root.select_song(root.next_song)
+    text: "Filepath: None"
+    font_size: 14
+    size_hint_y: None
+    height: 30
+
+<NextSongTitle@Label+ButtonBehavior>:
+    on_release: root.select_song(root.next_song)
+    text: "Title: None"
+    font_size: 14
+    size_hint_y: None
+    height: 30
+
+<NextSongArtist@Label+ButtonBehavior>:
+    on_release: root.select_song(root.next_song)
+    text: "Artist: None"
+    font_size: 14
+    size_hint_y: None
+    height: 30
+
+<NextSongCover@Image+ButtonBehavior>:
+    on_release: root.select_song(root.next_song)
+    source: "frontend/img/music.png"
+    size_hint: None, None
+    size: dp(100), dp(100)
+    pos_hint: {"center_x": 0.5}
