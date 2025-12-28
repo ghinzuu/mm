@@ -1,0 +1,16 @@
+#:include frontend/kivy/theme.kv
+
+<MusicManagerAppLayout>:
+    orientation: "vertical"
+
+    ScreenManager:
+        id: screen_manager
+        size_hint: 1, 1  # make sure it fills the parent
+
+        Screen:
+            name: "player"
+            PlayerUI:
+
+        Screen:
+            name: "loader"
+            LoaderUI: 

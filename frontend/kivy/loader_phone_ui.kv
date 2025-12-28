@@ -1,0 +1,319 @@
+#:include frontend/kivy/theme.kv
+
+<LoaderUI>:
+    name: "loader"
+
+    # theme color
+    canvas.before:
+        Color:
+            rgba: 23/255, 32/255, 42/255, 1   # background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+        id: loader
+        orientation: "vertical"
+        padding: 10
+        spacing: 10
+
+        # -----------------------------
+        # Title
+        # -----------------------------
+        BoxLayout:
+            id: loader_title
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            height: self.minimum_height
+            spacing: 10
+
+            TransparentButton:
+                id: go_player_button
+                size_hint_x: 0.1
+                height: 40
+                on_release: root.go_playerUI()
+                Image:
+                    id: go_to_player_icon
+                    source: 'frontend/img/icons/music.png'
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    size_hint: None, None
+                    size: 30, 30
+
+            PrimaryLabel:
+                id: loader_label
+                text: "Loader"
+                size_hint_x: 0.9
+                font_size: 22
+                height: 40
+
+        # -----------------------------
+        # 1st Section: MP3 Downloads
+        # -----------------------------
+
+        # Link input + DL TransparentButton
+        BoxLayout:
+            id: downloads_box
+            orientation: "vertical"
+            size_hint_y: 0.4
+            height: self.minimum_height
+            spacing: 10
+
+            BoxLayout:
+                id: download_url_box
+                size_hint_y: None
+                height: 40
+                spacing: 10
+                ThemedTextInput:
+                    id: download_url
+                    hint_text: "yt/sc URL to download"
+                    size_hint_x: 0.9
+                TransparentButton:
+                    id: download_url_button
+                    size_hint_x: 0.1
+                    on_release: root.download_url(url.text)
+                    Image:
+                        id: download_url_icon
+                        source: 'frontend/img/icons/download.png'
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+                        size_hint: None, None
+                        size: 30, 30  
+
+            # Radio ToggleButtons for browsers
+            BoxLayout:
+                id: browser_toggle_button_box
+                size_hint_y: None
+                height: 40
+                spacing: 10
+                ToggleButton:
+                    group: "browser"
+                    state: "down"
+                    Image:
+                        source: 'frontend/img/icons/chrome.png'
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+                        size_hint: None, None
+                        size: 30, 30 
+                ToggleButton:
+                    group: "browser"
+                    Image:
+                        source: 'frontend/img/icons/brave.png'
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+                        size_hint: None, None
+                        size: 30, 30 
+                ToggleButton:
+                    group: "browser"
+                    Image:
+                        source: 'frontend/img/icons/firefox.png'
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+                        size_hint: None, None
+                        size: 30, 30 
+                ToggleButton:
+                    group: "browser"
+                    Image:
+                        source: 'frontend/img/icons/edge.png'
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+                        size_hint: None, None
+                        size: 30, 30 
+
+            # Favorite folder input + DL TransparentButton
+            BoxLayout:
+                id: favourite_dl_directory_box
+                size_hint_y: None
+                height: 40
+                spacing: 10
+                ThemedTextInput:
+                    id: favourite_dl_directory
+                    size_hint_x: 0.9
+                    hint_text: "browser favourite folder to download from"
+                TransparentButton:
+                    id: favourite_dl_directory_button
+                    size_hint_x: 0.1
+                    on_release: root.download_favourite(favourite_dl_directory.text)
+                    Image:
+                        id: favourite_directory_dl_icon
+                        source: 'frontend/img/icons/download.png'
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+                        size_hint: None, None
+                        size: 30, 30
+
+            # Path input + Browse TransparentButton
+            BoxLayout:
+                id: dl_dir_box
+                size_hint_y: None
+                height: 40
+                spacing: 10
+                ThemedTextInput:
+                    id: dl_dir_path
+                    hint_text: "path/to/download/directory"
+                    size_hint_x: 0.9
+                TransparentButton:
+                    id: dl_dir_button
+                    size_hint_x: 0.1
+                    on_release: root.open_file_browser()
+                    Image:
+                        id: dl_dir_icon
+                        source: 'frontend/img/icons/browse.png'
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+                        size_hint: None, None
+                        size: 30, 30
+
+        # -----------------------------
+        # 2nd Section: synchronizer 
+        # -----------------------------
+        BoxLayout:
+            id: sync_box
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            height: 40
+            spacing: 10
+            padding: 10
+            PrimaryLabel:
+                text: "Sync from: "
+                font_size: 15
+                size_hint_x: 0.4
+            ToggleButton:
+                id: pc_to_phone
+                group: "sync_mode"
+                size_hint_x: 0.2
+                on_state: if self.state == "down": root.sync_mode = "pc_to_phone"
+                Image:
+                    id: sync_pc
+                    source: 'frontend/img/icons/computer.png'
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    size_hint: None, None
+                    size: 30, 30
+            ToggleButton:
+                id: phone_to_pc
+                group: "sync_mode"
+                size_hint_x: 0.2
+                state: "down"   # default selection
+                on_state: if self.state == "down": root.sync_mode = "phone_to_pc"
+                Image:
+                    id: sync_phone
+                    source: 'frontend/img/icons/phone.png'
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    size_hint: None, None
+                    size: 30, 30
+            # Sync TransparentButton with icon
+            TransparentButton:
+                id: syncUI_button
+                size_hint_x: 0.2
+                on_release: root.syncUI()
+                Image:
+                    source: 'frontend/img/icons/cloud_sync.png'
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    size_hint: None, None
+                    size: 40, 40
+
+        # -----------------------------
+        # 3rd Section: Cloud
+        # -----------------------------
+        BoxLayout:
+            id: drive_box
+            orientation: "horizontal"
+            spacing: 10
+            size_hint_y: 0.4
+            height: self.minimum_height
+
+            # Left side: Upload from device
+            ClickableBox:
+                id: upload_btn
+                disabled: True
+                orientation: "vertical"
+                spacing: 10
+                padding: 10
+                on_release: root.cloud_upload()
+                size_hint_x: 0.5
+
+                PrimaryLabel:
+                    text: "Upload from Device"
+                    font_size: 13
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+                    halign: "center"
+                    valign: "middle"                  
+
+                PrimaryLabel:
+                    id: upload_count
+                    text: "need sync"
+                    font_size: 13
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+                    halign: "center"
+                    valign: "middle"
+                    opacity: 0.4
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    spacing: 10
+                    size_hint_y: None
+                    height: 80
+
+                    Image:
+                        source: "frontend/img/icons/computer.png"
+                        allow_stretch: True
+                    Image:
+                        source: "frontend/img/icons/upload.png"
+                        allow_stretch: True
+                    Image:
+                        source: "frontend/img/icons/cloud.png"
+                        allow_stretch: True
+
+            # Right side: Download from cloud
+            ClickableBox:
+                id: download_btn
+                orientation: "vertical"
+                disabled: True
+                spacing: 10
+                padding: 10
+                on_release: root.cloud_download()
+                size_hint_x: 0.5
+
+                PrimaryLabel:
+                    text: "Download from Cloud"
+                    font_size: 13
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+                    halign: "center"
+                    valign: "middle"
+
+                PrimaryLabel:
+                    id: download_count
+                    text: "need sync"
+                    font_size: 13
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+                    halign: "center"
+                    valign: "middle"
+                    opacity: 0.4
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    spacing: 10
+                    size_hint_y: None
+                    height: 80
+
+                    Image:
+                        source: "frontend/img/icons/cloud.png"
+                        allow_stretch: True
+                    Image:
+                        source: "frontend/img/icons/download.png"
+                        allow_stretch: True
+                    Image:
+                        source: "frontend/img/icons/computer.png"
+                        allow_stretch: True      

@@ -37,28 +37,47 @@ ROADMAP:
 
 TODO:
     - Make an install/compile file/procedure for windows (mac/linux?) and android (ios?)
-    - Print usage
-    - Make paths (bookmarks + dl destination folder) so it works for any users on any OS
     - Make it compatible for all browsers (brave, chrome, firefox, safari, edge, opera)
-    - test you-get with YT list and with soundcloud
-    - Soundcloud DL
+    - Soundcloud DL + soundcloud playlist dl (test yt-dlp and current fucntion on the dlm)
     - Music player - create DB usage for playlist maker and favourite
     - (Online app : forum to share playlists)
-    - Blind test
+    - Blind test (frontend + backend)
     - player UI + mobile
-    - sync UI + mobile
-    - DL UI + mobile
-    - Next song
+    - DL & sync (loader) UI + mobile
     - Playlist maker
-    - Next song
-    - Previous next
     - greater list on browse
-    - time bug
-    - smoother song playback on slider
-    - DL cover
-    - smoother metadata edit
+    - search song feature : local app + streaming
     - test all features with all types of files : ".mp3", ".wav", ".flac", ".ogg", ".m4a"
-    - browse whole device to find songs
+    - browse whole device to find songs/smoother song playback on slider
+    - smoother song playback on slider:player's slider bug + popup time on scroll
+    - menu button to browse all app screens (player/loader/blind test)
+    - beautify
+    - lyrics
+    - cover image fetcher
+    - metadata edit bug
+    - bug: already downloaded song
+    - to_upload filter also with cloud_inventory
+    - auto sync
+    - sync popup : no status call back
+    - clickablebox
+    - clm dl and upload mp3
+    - github cleanup
+    - write test list
+    - popup to current style
+    - m4a?
+    - marquee bug 
+    - 700 lines player.py
+
+DONE:
+    - Print usage
+    - Make paths (bookmarks + dl destination folder) so it works for any users on any OS
+    - Next song
+    - Previous song   
+
+GARBAGE:
+    - test you-get with YT list and with soundcloud
+
+
 
 RUN Flask: (music manager online currently outside of scope)
 $env:FLASK_APP = "music_manager"
@@ -81,3 +100,49 @@ PREREQUISITES: LEGACY (check requirements.txt)
     - you-get
     - FFmpeg ?
     pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+
+
+
+CHATGPT RESET PROMPT
+--------------------
+
+Hello chat, I am developping an app in python using kivy and I am looking for your assistance for the coding. It is called music manager and its purpose is to be a music player, loader and tester.
+The player is a traditional music reader. 
+The loader handles downloads from links (youtube and soundcloud), single links, batch of links and playlist links, uploads and downloads from google drive while syncing data across a pc and phone (using google drive as a bridge). 
+The tester will be a blind tester and is only at the state of idea currently and will be developed post alpha.
+
+The app architecture is kinda MVC. Kv templates define various elements, like if it was html. 
+Behind it python frontend defines the dynamic behavior of these element and bridges deeper functions to the the backend (like if it was js).
+And behind these is the the backend, that does the 'heavy lifting' and detain all logic that does not belong to the displays.
+
+Heres a brief overview of my files in my project to give you an rough idea of whats there, I'll feed you the existing code as we go. 
+Please always feel free to ask for it if part of the processes are missing to debug.
+
+music_manager.py --> entry point of the app (contain main and generate all kivy screens)
+backend/
+    google_creds/ (...)
+    model/
+        Song.py
+    controller/
+        audio.py --> use by player.py to read music
+        cloud_manager.py --> function related to google drive
+        download_manager.py 
+        file_system_manager.py
+frontend/
+    fonts/
+    img/
+        icons/
+    kivy/
+        loader_pc_ui.kv
+        loader_phone_ui.kv
+        player_pc_ui.kv
+        player_phone_ui.kv
+        theme.kv --> contains stuff everyone uses
+    helper.py --> custom things/ animation / dynamic displaying... thing useful for all frontend
+    loader.py
+    player.py
+
+    In future prompts, if I reference bc, ft or kv, I'll mean "code from (respectively) backend, frontend, kivy"
+
+
+

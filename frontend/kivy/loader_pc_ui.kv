@@ -1,0 +1,243 @@
+#:include frontend/kivy/theme.kv
+
+<LoaderUI>:
+    name: "loader"
+
+    # theme color
+    canvas.before:
+        Color:
+            rgba: 23/255, 32/255, 42/255, 1   # background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    FloatLayout:
+        BoxLayout:
+            orientation: "vertical"
+            padding: 20
+            spacing: 20
+
+            # -----------------------------
+            # 1st Section: MP3 Download
+            # -----------------------------
+            BoxLayout:
+                orientation: "vertical"
+                spacing: 10
+
+                PrimaryLabel:
+                    text: "Loader"
+                    font_size: 22
+                    size_hint_y: None
+                    height: 40
+
+                # Link input + DL TransparentButton
+                BoxLayout:
+                    size_hint_y: None
+                    height: 40
+                    spacing: 10
+
+                    ThemedTextInput:
+                        id: url
+                        hint_text: "youtube/soundcloud/deezer URL to download"
+
+                    TransparentButton:
+                        id: download_url_button
+                        text: "Download URL"
+                        on_release: root.download_url(url.text)
+
+                # Path input + Browse TransparentButton
+                BoxLayout:
+                    size_hint_y: None
+                    height: 40
+                    spacing: 10
+                    ThemedTextInput:
+                        id: target_dl_dir_path
+                        hint_text: "path/to/download/directory"
+                    TransparentButton:
+                        text: "Browse"
+                        on_release: root.open_file_browser()
+
+                # Radio TransparentButtons for browsers
+                BoxLayout:
+                    id: browser_box
+                    size_hint_y: None
+                    height: 40
+                    spacing: 15
+
+                    ToggleButton:
+                        group: "browser"
+                        text: "Chrome"
+                        state: "down"
+
+                    ToggleButton:
+                        group: "browser"
+                        text: "Brave"
+
+                    ToggleButton:
+                        group: "browser"
+                        text: "Firefox"
+
+                    ToggleButton:
+                        group: "browser"
+                        text: "Edge"
+
+                # Favorite folder input + DL TransparentButton
+                BoxLayout:
+                    size_hint_y: None
+                    height: 40
+                    spacing: 10
+
+                    ThemedTextInput:
+                        id: favourite_directory
+                        hint_text: "favourite folder to download from"
+                    
+                    TransparentButton:
+                        text: "Download favourite"
+                        on_release: root.download_favourite(favourite_directory.text)
+
+            # -----------------------------
+            # 2nd Section: Sync Status
+            # -----------------------------
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: None
+                height: 50
+                spacing: 10
+
+                PrimaryLabel:
+                    text: "Sync Status"
+                    font_size: 22
+
+                # Radio TransparentButtons section
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_x: None
+                    width: 300
+                    spacing: 20
+
+                    PrimaryLabel:
+                        text: "Sync with:"
+                        font_size: 18
+                        size_hint_x: None
+                        width: 100
+
+                    ToggleButton:
+                        text: "PC --> Phone"
+                        group: "sync_mode"
+                        state: "down"   # default selection
+                        on_state: if self.state == "down": root.sync_mode = "pc_to_phone"
+
+                    ToggleButton:
+                        text: "Phone --> PC"
+                        group: "sync_mode"
+                        on_state: if self.state == "down": root.sync_mode = "phone_to_pc"
+
+
+                # Sync TransparentButton with icon
+                TransparentButton:
+                    size_hint_x: None
+                    width: 100
+                    on_release: root.syncUI()
+                    Image:
+                        source: 'frontend/img/icons/cloud_sync.png'
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+                        size_hint: None, None
+                        size: 40, 40
+
+            # -----------------------------
+            # 3rd Section: Cloud
+            # -----------------------------
+            BoxLayout:
+                orientation: "horizontal"
+                spacing: 30
+                size_hint_y: None
+                height: 150
+
+                # Left side: Upload from device
+                ClickableBox:
+                    id: upload_btn
+                    disabled: True
+                    orientation: "vertical"
+                    spacing: 10
+                    padding: 10
+                    on_release: root.cloud_upload()
+                    size_hint_x: 0.5
+
+                    PrimaryLabel:
+                        text: "Upload from Device"
+                        font_size: 20
+                        size_hint_y: None
+                        height: 30                    
+
+                    PrimaryLabel:
+                        id: upload_count
+                        text: ""
+                        font_size: 16
+                        size_hint_y: None
+                        height: 20
+                        opacity: 0
+
+                    BoxLayout:
+                        orientation: "horizontal"
+                        spacing: 10
+                        size_hint_y: None
+                        height: 80
+
+                        Image:
+                            source: "frontend/img/icons/computer.png"
+                            allow_stretch: True
+                        Image:
+                            source: "frontend/img/icons/upload.png"
+                            allow_stretch: True
+                        Image:
+                            source: "frontend/img/icons/cloud.png"
+                            allow_stretch: True
+
+                # Right side: Download from cloud
+                ClickableBox:
+                    id: download_btn
+                    orientation: "vertical"
+                    disabled: True
+                    spacing: 10
+                    padding: 10
+                    on_release: root.cloud_download()
+                    size_hint_x: 0.5
+
+                    PrimaryLabel:
+                        text: "Download from Cloud"
+                        font_size: 20
+                        size_hint_y: None
+                        height: 30
+
+                    PrimaryLabel:
+                        id: download_count
+                        text: ""
+                        font_size: 16
+                        size_hint_y: None
+                        height: 20
+                        opacity: 0
+
+                    BoxLayout:
+                        orientation: "horizontal"
+                        spacing: 10
+                        size_hint_y: None
+                        height: 80
+
+                        Image:
+                            source: "frontend/img/icons/cloud.png"
+                            allow_stretch: True
+                        Image:
+                            source: "frontend/img/icons/download.png"
+                            allow_stretch: True
+                        Image:
+                            source: "frontend/img/icons/computer.png"
+                            allow_stretch: True
+        # Absolute placed widget
+        TransparentButton:
+            id: go_to_player_button
+            text: " <-- Player"
+            size_hint: None, None
+            size: dp(90), dp(40)
+            pos_hint: {"left": 1, "center_y": 0.95}   # Stick to the left, vertically up
+            on_release: root.go_playerUI()

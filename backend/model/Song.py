@@ -1,4 +1,5 @@
 import os
+import time
 from datetime import datetime
 import base64
 import mutagen
@@ -11,7 +12,6 @@ from mutagen.id3 import ID3, APIC, TIT2, TPE1, TALB
 from mutagen.easyid3 import EasyID3
 
 import psutil
-import time
 import ctypes
 import win32con
 import win32api
@@ -53,7 +53,7 @@ class Song:
         """Extracts cover image from metadata and saves it as a file (if necessary)."""
 
         # Absolute path for default cover image
-        default_cover = os.path.abspath("frontend/img/music.png")
+        default_cover = os.path.abspath("frontend/img/icons/cover.png")
 
         if not self.metadata:
             return default_cover  # Return default if no metadata
@@ -95,7 +95,42 @@ class Song:
             return current_cover  # Return path of extracted cover
 
         return default_cover  # Return default if no cover was found
+    
+    def __str__(self):
+        return f"{self.title} - {self.artist} ({self.album}, {self.date}) [{self.genre}] | {self.format_time()}"
 
+    def save_metadata(self, new_metadata):
+        """Update and save metadata in the audio file safely."""
+
+        max_retries = 5
+        for attempt in range(max_retries):
+            try:
+                metadata = File(self.filepath, easy=True)
+                if metadata is None:
+                    print(f"Could not read metadata for {self.filepath}")
+                    return
+
+                for key, value in new_metadata.items():
+                    try:
+                        metadata[key] = value
+                    except KeyError:
+                        print(f"'{key}' is not a valid EasyID3 field and was skipped.")
+
+                metadata.save()
+                print("Metadata saved successfully!")
+                return
+            except PermissionError as e:
+                print(f"File is locked (attempt {attempt+1}/{max_retries}), retrying in 0.5s...")
+                time.sleep(0.5)
+            except Exception as e:
+                print("Error saving metadata:", e)
+                return
+
+        print("Failed to save metadata after multiple retries.")
+
+
+
+    '''
     def save_metadata(self, new_metadata):
         """Update and save metadata in the audio file safely."""
 
@@ -154,7 +189,5 @@ class Song:
                         proc.wait(timeout=3)  # Wait for process to close
             except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
                 pass
-
-    def __str__(self):
-        return f"{self.title} - {self.artist} ({self.album}, {self.date}) [{self.genre}] | {self.format_time()}"
-
+    '''
+    

@@ -1,0 +1,45 @@
++--------+
+| Player |
++--------+
+
+Select song
+Play - pause
+Next
+Next Box
+Previous
+Toggle repeat
+Next
+Previous
+Slider (current time on_release)
+Edit metadata
+Edit music directory
+(muscic list extend and reduce)
+(Playlist maker)
+(Sampler)
+
++--------+
+| Loader |
++--------+
+
+dl url
+    --> youtube
+    --> soundcloud
+    --> deezer
+dl playlist
+    --> youtube
+    --> soundcloud
+    --> deezer
+dl favourites
+sync
+    --> pc sync
+    --> phone sync
+cloud ul
+cloud dl
+
++----+
+| UI |
++----+
+
+Resizing
+    --> phone to pc
+    --> pc to phone

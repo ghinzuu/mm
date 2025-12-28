@@ -1,0 +1,120 @@
+#:kivy 2.2.0
+
+<ThemedScreen@Screen>:
+    canvas.before:
+        Color:
+            rgba: 23/255, 32/255, 42/255, 1   # background dark blue green
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<ThemedLabel@Label>:
+    font_name: "frontend/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf"
+    color: 0.84, 0.82, 0.79, 1  # whitish 
+
+<PrimaryLabel@ThemedLabel>:
+    color: 0.84, 0.82, 0.79, 1 # whitish
+
+<SecondaryLabel@ThemedLabel>:
+    color: 0.35, 0.70, 0.64, 1 # greenish
+
+<ThirdLabel@ThemedLabel>:
+    color: 0.15, 0.47, 0.95, 1 # light blue
+
+
+<TransparentButton@Button>:
+    font_name: "frontend/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf"
+    background_color: 0, 0, 0, 0   # transparent (styled via borderless look)
+    color: 0.84, 0.82, 0.79, 1     # whitish
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0, 0   # transparent 
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [8]
+
+<LightButton@Button>:
+    font_name: "frontend/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf"
+    background_color: 0, 0, 0, 0  # Remove default white
+    foreground_color: 0.84, 0.82, 0.79, 1  # Primary text color
+
+    multiline: False
+
+    canvas.before:
+        Color:
+            rgba: 0.12, 0.16, 0.22, 1  # Slightly lighter than background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: 0.5, 0.5, 0.5, 1  # Line color (secondary)
+        Rectangle:
+            pos: self.x, self.y  # bottom left corner
+            size: self.width, 1  # 1px high underline
+
+# <ThemedTextInput@TextInput>:
+#     font_name: "frontend/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf"
+#     background_normal: ""   # disable default image
+#     background_active: ""   # disable active image
+#     background_color: 0, 0, 0, 0  # fully transparent background
+#     foreground_color: 0.84, 0.82, 0.79, 1  # primary text color
+#     cursor_color: 0.84, 0.82, 0.79, 1
+#     padding: [5, 5, 5, 5]
+#     multiline: False  # usually wanted for forms
+#     canvas.before:
+#         Color:
+#             rgba: 0.12, 0.16, 0.22, 1  # slightly lighter than background
+#         Rectangle:
+#             pos: self.pos
+#             size: self.size
+#         Color:
+#             rgba: 0.35, 0.70, 0.64, 1  # line color (secondary)
+#         Rectangle:
+#             pos: self.x, self.y
+#             size: self.width, 1
+#     on_focus:
+#         self.canvas.before.children[0].rgba = (0.35, 0.70, 0.64, 1) if self.focus else (0.12, 0.16, 0.22, 1)
+
+
+<ThemedTextInput@TextInput>:
+    font_name: "frontend/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf"
+    background_normal: ""   # disable default skin
+    background_active: ""   # disable active skin
+    background_color: 0.12, 0.16, 0.22, 1  # fully transparent
+    foreground_color: 0.84, 0.82, 0.79, 1       # <-- text color
+    disabled_foreground_color: 0.84, 0.82, 0.79, 1
+    cursor_color: 0.84, 0.82, 0.79, 1
+    hint_text_color: 0.5, 0.5, 0.5, 1
+    multiline: False
+    underline_width: 0
+    underline_color: 0.35, 0.70, 0.64, 1
+
+    canvas.after:
+        Color:
+            rgba: root.underline_color
+        Rectangle:
+            pos: self.center_x - self.underline_width/2, self.y
+            size: root.underline_width, 2
+
+    on_focus: self.animate_underline(self.focus)
+
+
+<MarqueeLabel@FloatLayout>:
+    text: ""
+    font_size: 20
+    color: 0.84, 0.82, 0.79, 1
+    speed: 50  # pixels per second
+    padding: 10
+    Label:
+        id: scrolling_label
+        text: root.text
+        font_size: root.font_size
+        color: root.color
+        size_hint_x: None
+        width: self.texture_size[0]
+        #x: root.width  # start just outside the right
+        x: 10
+        y: (root.height - self.texture_size[1]) / 2
+        shorten: False
+        halign: "left"

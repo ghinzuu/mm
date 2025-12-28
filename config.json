@@ -1,3 +1,5 @@
 {
-    "music_directory": "D:\\Music"
+    "music_directory": "D:\\Music",
+    "download_directory": "D:\\Music\\DL",
+    "favourite_directory": "music"
 }
