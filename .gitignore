@@ -133,3 +133,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+backend/google_creds/
+backend/storage.json
